@@ -18,10 +18,9 @@ public class LatestPriceController {
 
     private final PriceService priceService;
 
-    // todo eur/usd? EUR/USD?
-    // @GetMapping("/price/latest/{instrumentName}")
+    // @GetMapping("/price/latest")
     public HttpResponse getLatestPrice(
-            /* @PathVariable */ String instrumentName
+            /* @RequestParam("instrument") */ String instrumentName
     ) {
         Instrument instrument = Instrument.forName(instrumentName);
         log.info("Received get latest price request for instrument={}", instrument);
